@@ -43,8 +43,8 @@
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Home</a></li>
-                        <li><a href="#about">About</a></li>
+                         <li ><a href="<c:url value="/"/>">Home</a></li>
+                        <li class="active"><a href="<c:url value="/productList"/>">Product List</a></li>
                         <li><a href="#contact">Contact</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
@@ -83,13 +83,18 @@
 					<th>Price</th>
 				</tr>
 			</thead>
-			<tr>
-				<td><img alt="product image" src="#"></td>
-				<td>${theProduct.productName}</td>
-				<td>${theProduct.productCategory}</td>
-				<td>${theProduct.productCondition}</td>
-				<td>${theProduct.productPrice}</td>
-			</tr>
+			
+				<c:forEach var="tempProduct" items="${theProducts}">
+					<tr>
+					<td><img alt="product image" src="#"></td>
+					<td>${tempProduct.productName}</td>
+					<td>${tempProduct.productCategory}</td>
+					<td>${tempProduct.productCondition}</td>
+					<td>${tempProduct.productPrice}USD</td>
+					</tr>
+				</c:forEach>
+				
+			
 		</table> 
     	<!-- FOOTER -->
     	<footer>
