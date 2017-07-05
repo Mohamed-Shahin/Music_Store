@@ -31,4 +31,8 @@ public String getProducts(Model model){
 	model.addAttribute("theProducts", productList);
 	return "productList" ;
 }
+@RequestMapping("/productDetail")
+public String getProductDetails(){
+	return "/viewProduct";
+}
 }
