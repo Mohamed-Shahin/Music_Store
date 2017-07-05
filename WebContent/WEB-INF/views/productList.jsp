@@ -1,4 +1,4 @@
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ include file="/WEB-INF/views/template/header.jsp" %>
 <div class="container-wrapper">
 	<div class="container">
@@ -14,16 +14,23 @@
 					<th>Category</th>
 					<th>Condition</th>
 					<th>Price</th>
+					<th>Detail</th>
 				</tr>
 			</thead>
 			
 				<c:forEach var="tempProduct" items="${theProducts}">
 					<tr>
-					<td><img alt="product image" src="#"></td>
-					<td>${tempProduct.productName}</td>
-					<td>${tempProduct.productCategory}</td>
-					<td>${tempProduct.productCondition}</td>
-					<td>${tempProduct.productPrice}USD</td>
+					<td><img src="#" alt="image"/></td>
+                    <td>${tempProduct.productName}</td>
+                    <td>${tempProduct.productCategory}</td>
+                    <td>${tempProduct.productCondition}</td>
+                    <td>${tempProduct.productPrice} USD</td>
+                    <td>
+                    	<a href="${pageContext.request.contextPath}/productList/viewProduct/${tempProduct.productId}">
+                    		<span class="glyphicon glyphicon-info-sign"></span>
+                    	</a>
+                    </td>
+					
 					</tr>
 				</c:forEach>
 				

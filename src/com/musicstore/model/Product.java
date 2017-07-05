@@ -1,25 +1,33 @@
 package com.musicstore.model;
 
 public class Product {
+	private String productId ;
 	private String productName ;
-	private String productDescripation ;
+	private String productDescription ;
 	private String productCategory ;
 	private double productPrice ;
 	private String productCondition ;
 	private String productStatus ;
 	private int unitInStock ;
 	private String productManufacturer ;
+	
+	public String getProductId() {
+		return productId;
+	}
+	public void setProductId(String productId) {
+		this.productId = productId;
+	}
 	public String getProductName() {
 		return productName;
 	}
 	public void setProductName(String productName) {
 		this.productName = productName;
 	}
-	public String getProductDescripation() {
-		return productDescripation;
+	public String getProductDescription() {
+		return productDescription;
 	}
-	public void setProductDescripation(String productDescripation) {
-		this.productDescripation = productDescripation;
+	public void setProductDescription(String productDescription) {
+		this.productDescription = productDescription;
 	}
 	public String getProductCategory() {
 		return productCategory;
