@@ -42,4 +42,24 @@ public String viewProduct(@PathVariable String productId, Model model) throws IO
 	model.addAttribute(product);
 	return "viewProduct";
 }
+@RequestMapping("/admin")
+public String adminPage(){
+	return "admin";
+}
+@RequestMapping("/admin/productInventory")
+public String productInventoryPage(Model model){
+	// create List 
+	List<Product> productList = new ArrayList<Product>();
+	// get product1 from productDao class 
+	productList = p.getProducts();
+
+	// add products list to model 
+	model.addAttribute("theProducts", productList);
+	return "product-inventory";
+}
+@RequestMapping("/admin/productInventory/addProduct")
+public String addProductPage(){
+	return "add-product";
+}
+
 }
