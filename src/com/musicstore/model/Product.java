@@ -1,26 +1,36 @@
 package com.musicstore.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
-import org.springframework.stereotype.Component;
+
 
 @Entity
-@Component
+@Table(name="products")
 public class Product {
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="product_id")
 	private String productId ;
-	
+	@Column(name="product_name")
 	private String productName ;
+	@Column(name="product_description")
 	private String productDescription ;
+	@Column(name="product_category")
 	private String productCategory ;
+	@Column(name="product_price")
 	private double productPrice ;
+	@Column(name="product_condition")
 	private String productCondition ;
+	@Column(name="product_status")
 	private String productStatus ;
+	@Column(name="unit_in_stock")
 	private int unitInStock ;
+	@Column(name="product_manufacturer")
 	private String productManufacturer ;
 	
 	public String getProductId() {

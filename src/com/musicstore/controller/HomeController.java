@@ -6,16 +6,19 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.musicstore.model.Product;
 import com.musicstore.dao.ProductDao;
+import com.musicstore.dao.impl.ProductDaoImpl;
 
 @Controller
 public class HomeController {
-	private ProductDao p = new ProductDao();
+	@Autowired
+	private ProductDao p ;
 @RequestMapping("/")
 public String home(){
 	
@@ -26,7 +29,7 @@ public String getProducts(Model model){
 	// create List 
 	List<Product> productList = new ArrayList<Product>();
 	// get product1 from productDao class 
-	productList = p.getProductList();
+	productList = p.getProducts();
 
 	// add products list to model 
 	model.addAttribute("theProducts", productList);
@@ -35,7 +38,7 @@ public String getProducts(Model model){
 @RequestMapping("/productList/viewProduct/{productId}")
 public String viewProduct(@PathVariable String productId, Model model) throws IOException{
 	
-	Product product = p.getProductListById(productId);
+	Product product = p.getProduct(productId);
 	model.addAttribute(product);
 	return "viewProduct";
 }
