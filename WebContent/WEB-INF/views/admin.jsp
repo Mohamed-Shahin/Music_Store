@@ -7,5 +7,5 @@
 			<p class="lead">This is administrator page </p>
 		</div>  
 		<h3> Product Inventory</h3>
-		<a href="${pageContext.request.contextPath}/admin/product-inventory">Product Inventory</a>
+		<a href="${pageContext.request.contextPath}/admin/productInventory">Product Inventory</a>
 <%@ include file="/WEB-INF/views/template/footer.jsp" %>

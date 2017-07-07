@@ -37,5 +37,5 @@
 			
 		</table> 
 		
-<a href="${pageContext.request.contextPath}/admin/product-inventory/add-product">Add product</a>
+<a href="${pageContext.request.contextPath}/admin/productInventory/addProduct" class="btn btn-primary">Add product</a>
 <%@ include file="/WEB-INF/views/template/footer.jsp" %>

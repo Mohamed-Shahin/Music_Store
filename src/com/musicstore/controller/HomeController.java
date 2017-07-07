@@ -9,8 +9,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
 import com.musicstore.model.Product;
 import com.musicstore.dao.ProductDao;
 import com.musicstore.dao.impl.ProductDaoImpl;
@@ -58,8 +61,15 @@ public String productInventoryPage(Model model){
 	return "product-inventory";
 }
 @RequestMapping("/admin/productInventory/addProduct")
-public String addProductPage(){
+public String addProductPage(Model model){
+	 Product product = new Product();
+     model.addAttribute("product", product);
 	return "add-product";
+}
+@RequestMapping(value="/admin/productInventory/addProduct", method=RequestMethod.POST)
+public String addProductPost(@ModelAttribute Product product){
+	p.addProduct(product);
+	return "redirect:/admin/productInventory" ;
 }
 
 }
