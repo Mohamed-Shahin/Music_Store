@@ -71,5 +71,9 @@ public String addProductPost(@ModelAttribute Product product){
 	p.addProduct(product);
 	return "redirect:/admin/productInventory" ;
 }
-
+@RequestMapping("/productList/deleteProduct/{id}")
+public String deleteProduct(@PathVariable String id ){
+	p.deleteProduct(id);
+	return "redirect:/admin/productInventory";
+}
 }

@@ -29,6 +29,9 @@
                     	<a href="${pageContext.request.contextPath}/productList/viewProduct/${tempProduct.productId}">
                     		<span class="glyphicon glyphicon-info-sign"></span>
                     	</a>
+                    	<a href="${pageContext.request.contextPath}/productList/deleteProduct/${tempProduct.productId}">
+                    		<span class="glyphicon glyphicon-remove"></span>
+                    	</a>
                     </td>
 					
 					</tr>
